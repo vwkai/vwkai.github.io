@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://vwkai.com/"/>
-  <updated>2019-10-25T16:17:40.787Z</updated>
+  <updated>2019-10-25T16:18:31.078Z</updated>
   <id>http://vwkai.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://vwkai.com/2019/10/25/mac-tools/"/>
     <id>http://vwkai.com/2019/10/25/mac-tools/</id>
     <published>2019-10-25T15:53:53.000Z</published>
-    <updated>2019-10-25T16:17:40.787Z</updated>
+    <updated>2019-10-25T16:18:31.078Z</updated>
     
     <content type="html"><![CDATA[<p>以下是日常或工作中用到的一些工具（Mac端）： </p><ul><li>XMind：画思维脑图 </li><li>Sublime Text：代码编辑器</li><li>OmniPlan：项目管理 </li><li>Draw.io：绘图工具，画流程图很方便 ，也有Web端</li><li>Postman：模拟请求工具</li><li>Typora：Markdown工具，简洁、高效</li><li>iTerm2：终端工具 </li><li>Charles：抓包工具 </li><li>EverNote（印象笔记）：记录日常或工作笔记 </li><li>Sequel Pro：MySQL数据库管理工具</li></ul>]]></content>
     
