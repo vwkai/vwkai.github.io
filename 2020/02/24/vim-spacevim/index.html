@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="MySQL,">
+  <meta name="keywords" content="Vim,编辑器,">
 
 
 
@@ -77,18 +77,23 @@
 
 
 
-<meta name="description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &amp;apos;test_readonly&amp;apos;@&amp;apos;localhost&amp;apos; identified by &amp;apos;1234&amp;apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用Vim写代码时经常会下载一些插件，让Vim的功能变得更丰富，用起来更加方便顺手，虽然总体比不上其他的IDE功能那么强大，但Vim的优势也是其他IDE无法比拟的。有很多人说如果下载很多插件把Vim整的像其他IDE功能那么多， 为何不直接用IDE去开发，这就仁者见仁，智者见智了。现在有大量的插件可以使用，但是下载一个插件，安装配置折腾半天，有时也整不顺">
+<meta name="keywords" content="Vim,编辑器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql设置数据库只读权限">
-<meta property="og:url" content="http://vwkai.com/2019/01/15/mysql-set-readonly/index.html">
+<meta property="og:title" content="SpaceVim">
+<meta property="og:url" content="http://vwkai.com/2020/02/24/vim-spacevim/index.html">
 <meta property="og:site_name" content="Kai">
-<meta property="og:description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &amp;apos;test_readonly&amp;apos;@&amp;apos;localhost&amp;apos; identified by &amp;apos;1234&amp;apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用Vim写代码时经常会下载一些插件，让Vim的功能变得更丰富，用起来更加方便顺手，虽然总体比不上其他的IDE功能那么强大，但Vim的优势也是其他IDE无法比拟的。有很多人说如果下载很多插件把Vim整的像其他IDE功能那么多， 为何不直接用IDE去开发，这就仁者见仁，智者见智了。现在有大量的插件可以使用，但是下载一个插件，安装配置折腾半天，有时也整不顺">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-25T13:31:58.259Z">
+<meta property="og:image" content="http://vwkai.com/2020/02/24/vim-spacevim/img1.png">
+<meta property="og:image" content="http://vwkai.com/2020/02/24/vim-spacevim/img2.png">
+<meta property="og:image" content="http://vwkai.com/2020/02/24/vim-spacevim/img3.png">
+<meta property="og:image" content="http://vwkai.com/2020/02/24/vim-spacevim/img4.png">
+<meta property="og:updated_time" content="2020-02-24T13:02:34.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql设置数据库只读权限">
-<meta name="twitter:description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &amp;apos;test_readonly&amp;apos;@&amp;apos;localhost&amp;apos; identified by &amp;apos;1234&amp;apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权">
+<meta name="twitter:title" content="SpaceVim">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用Vim写代码时经常会下载一些插件，让Vim的功能变得更丰富，用起来更加方便顺手，虽然总体比不上其他的IDE功能那么强大，但Vim的优势也是其他IDE无法比拟的。有很多人说如果下载很多插件把Vim整的像其他IDE功能那么多， 为何不直接用IDE去开发，这就仁者见仁，智者见智了。现在有大量的插件可以使用，但是下载一个插件，安装配置折腾半天，有时也整不顺">
+<meta name="twitter:image" content="http://vwkai.com/2020/02/24/vim-spacevim/img1.png">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://vwkai.com/2019/01/15/mysql-set-readonly/">
+  <link rel="canonical" href="http://vwkai.com/2020/02/24/vim-spacevim/">
 
 
 
 
 
-  <title>mysql设置数据库只读权限 | Kai</title>
+  <title>SpaceVim | Kai</title>
   
 
 
@@ -261,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vwkai.com/2019/01/15/mysql-set-readonly/">
+    <link itemprop="mainEntityOfPage" href="http://vwkai.com/2020/02/24/vim-spacevim/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kai">
@@ -278,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mysql设置数据库只读权限</h1>
+          <h1 class="post-title" itemprop="name headline">SpaceVim</h1>
         
 
         <div class="post-meta">
@@ -290,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-15T15:34:50+08:00">
-                2019-01-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T12:43:05+08:00">
+                2020-02-24
               </time>
             
 
@@ -313,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
+                  <a href="/categories/Vim/" itemprop="url" rel="index">
+                    <span itemprop="name">Vim</span>
                   </a>
                 </span>
 
@@ -350,10 +355,17 @@
       
 
       
-        <p>可以理解为开设一个账号，权限为只读</p>
-<p>创建并授权用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT select ON *.* to &apos;test_readonly&apos;@&apos;localhost&apos; identified by &apos;1234&apos;;</span><br></pre></td></tr></table></figure>
-<p>不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;用Vim写代码时经常会下载一些插件，让Vim的功能变得更丰富，用起来更加方便顺手，虽然总体比不上其他的IDE功能那么强大，但Vim的优势也是其他IDE无法比拟的。有很多人说如果下载很多插件把Vim整的像其他IDE功能那么多， 为何不直接用IDE去开发，这就仁者见仁，智者见智了。现在有大量的插件可以使用，但是下载一个插件，安装配置折腾半天，有时也整不顺手，使用效果不好，比较费时费力，弄的比较心累、崩溃…<br>&nbsp;&nbsp;&nbsp;&nbsp;在这过程中发现了一个模块化的Vim IDE——SpaceVim，以下是它的官方介绍</p>
+<blockquote>
+<p>SpaceVim 是一个社区驱动的模块化的 Vim IDE，以模块的方式组织管理插件以及相关配置， 为不同的语言开发量身定制了相关的开发模块，该模块提供代码自动补全， 语法检查、格式化、调试、REPL 等特性。用户仅需载入相关语言的模块即可得到一个开箱即用的 Vim IDE。</p>
+</blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;使用了一段时间发现还是非常方便的，省去了自己安装各种插件的时间，配置简单，可以对很多的编程语言进行单独的配置，并且不断有人在进行维护更新，相信以后功能支持会越来越强大。中文官网地址：<a href="https://spacevim.org/cn/" title="SpaceVim" target="_blank" rel="noopener">SpaceVim</a><br><a id="more"></a></p>
+<h3 id="记录一下在使用SpaceVim时遇到的一些问题"><a href="#记录一下在使用SpaceVim时遇到的一些问题" class="headerlink" title="记录一下在使用SpaceVim时遇到的一些问题"></a>记录一下在使用SpaceVim时遇到的一些问题</h3><p>在安装好以后最初打开Vim时，发现编辑器的的状态栏还有tab等有图标的地方出现了乱码，显示“？”，查了一番发现是终端工具的字体没有安装好，终端工具使用的是ITerm2，如图：<br><img src="/2020/02/24/vim-spacevim/img1.png" style="zoom:80%;" align="left"><br><img src="/2020/02/24/vim-spacevim/img2.png" style="zoom:80%;" align="left"></p>
+<p><div style="clear:both"></div><br>解决方法就是下载并安装相应字体，系统是macOS，直接使用brew进行下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew tap caskroom/fonts</span><br><span class="line">$ brew cask install font-hack-nerd-font</span><br></pre></td></tr></table></figure>
+<p>如果brew命令半天无响应，可能是因为镜像源的问题，执行以下命令，修改为国内的镜像源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 步骤一</span><br><span class="line">cd $(brew --repo)</span><br><span class="line">git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git</span><br><span class="line"> </span><br><span class="line"># 步骤二</span><br><span class="line">cd $(brew --repo)/Library/Taps/homebrew/homebrew-core</span><br><span class="line">git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git</span><br><span class="line"> </span><br><span class="line">#步骤三</span><br><span class="line">brew update</span><br></pre></td></tr></table></figure></p>
+<p>更新完后，再重新执行下载并安装字体的命令，就不会出现无响应的情况了</p>
+<p>下载成功后，进入iTerm的配置界面，按照图中标明的进行配置<br><img src="/2020/02/24/vim-spacevim/img3.png" alt=""><br>配置完成后重启Iterm2工具，状态栏的位置上各种图标都已显示正常，效果如下：<br><img src="/2020/02/24/vim-spacevim/img4.png" alt=""></p>
 
       
     </div>
@@ -374,7 +386,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://vwkai.com/2019/01/15/mysql-set-readonly/" title="mysql设置数据库只读权限">http://vwkai.com/2019/01/15/mysql-set-readonly/</a>
+    <a href="http://vwkai.com/2020/02/24/vim-spacevim/" title="SpaceVim">http://vwkai.com/2020/02/24/vim-spacevim/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -389,7 +401,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/Vim/" rel="tag"># Vim</a>
+          
+            <a href="/tags/编辑器/" rel="tag"># 编辑器</a>
           
         </div>
       
@@ -402,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/30/php-magic-constants/" rel="next" title="PHP魔术常量">
-                <i class="fa fa-chevron-left"></i> PHP魔术常量
+              <a href="/2019/10/25/mac-tools/" rel="next" title="Mac软件推荐">
+                <i class="fa fa-chevron-left"></i> Mac软件推荐
               </a>
             
           </div>
@@ -411,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/17/php-copy-on-write/" rel="prev" title="PHP写时复制 Copy On Write">
-                PHP写时复制 Copy On Write <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,8 +476,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -529,6 +548,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#记录一下在使用SpaceVim时遇到的一些问题"><span class="nav-number">1.</span> <span class="nav-text">记录一下在使用SpaceVim时遇到的一些问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

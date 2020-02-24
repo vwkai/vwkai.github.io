@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://vwkai.com/"/>
-  <updated>2019-10-25T16:18:31.078Z</updated>
+  <updated>2020-02-24T13:02:34.332Z</updated>
   <id>http://vwkai.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpaceVim</title>
+    <link href="http://vwkai.com/2020/02/24/vim-spacevim/"/>
+    <id>http://vwkai.com/2020/02/24/vim-spacevim/</id>
+    <published>2020-02-24T04:43:05.000Z</published>
+    <updated>2020-02-24T13:02:34.332Z</updated>
+    
+    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;用Vim写代码时经常会下载一些插件，让Vim的功能变得更丰富，用起来更加方便顺手，虽然总体比不上其他的IDE功能那么强大，但Vim的优势也是其他IDE无法比拟的。有很多人说如果下载很多插件把Vim整的像其他IDE功能那么多， 为何不直接用IDE去开发，这就仁者见仁，智者见智了。现在有大量的插件可以使用，但是下载一个插件，安装配置折腾半天，有时也整不顺手，使用效果不好，比较费时费力，弄的比较心累、崩溃…<br>&nbsp;&nbsp;&nbsp;&nbsp;在这过程中发现了一个模块化的Vim IDE——SpaceVim，以下是它的官方介绍</p><blockquote><p>SpaceVim 是一个社区驱动的模块化的 Vim IDE，以模块的方式组织管理插件以及相关配置， 为不同的语言开发量身定制了相关的开发模块，该模块提供代码自动补全， 语法检查、格式化、调试、REPL 等特性。用户仅需载入相关语言的模块即可得到一个开箱即用的 Vim IDE。</p></blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;使用了一段时间发现还是非常方便的，省去了自己安装各种插件的时间，配置简单，可以对很多的编程语言进行单独的配置，并且不断有人在进行维护更新，相信以后功能支持会越来越强大。中文官网地址：<a href="https://spacevim.org/cn/" title="SpaceVim" target="_blank" rel="noopener">SpaceVim</a><br><a id="more"></a></p><h3 id="记录一下在使用SpaceVim时遇到的一些问题"><a href="#记录一下在使用SpaceVim时遇到的一些问题" class="headerlink" title="记录一下在使用SpaceVim时遇到的一些问题"></a>记录一下在使用SpaceVim时遇到的一些问题</h3><p>在安装好以后最初打开Vim时，发现编辑器的的状态栏还有tab等有图标的地方出现了乱码，显示“？”，查了一番发现是终端工具的字体没有安装好，终端工具使用的是ITerm2，如图：<br><img src="/2020/02/24/vim-spacevim/img1.png" style="zoom:80%;" align="left"><br><img src="/2020/02/24/vim-spacevim/img2.png" style="zoom:80%;" align="left"></p><p><div style="clear:both"></div><br>解决方法就是下载并安装相应字体，系统是macOS，直接使用brew进行下载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew tap caskroom/fonts</span><br><span class="line">$ brew cask install font-hack-nerd-font</span><br></pre></td></tr></table></figure><p>如果brew命令半天无响应，可能是因为镜像源的问题，执行以下命令，修改为国内的镜像源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 步骤一</span><br><span class="line">cd $(brew --repo)</span><br><span class="line">git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git</span><br><span class="line"> </span><br><span class="line"># 步骤二</span><br><span class="line">cd $(brew --repo)/Library/Taps/homebrew/homebrew-core</span><br><span class="line">git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git</span><br><span class="line"> </span><br><span class="line">#步骤三</span><br><span class="line">brew update</span><br></pre></td></tr></table></figure></p><p>更新完后，再重新执行下载并安装字体的命令，就不会出现无响应的情况了</p><p>下载成功后，进入iTerm的配置界面，按照图中标明的进行配置<br><img src="/2020/02/24/vim-spacevim/img3.png" alt=""><br>配置完成后重启Iterm2工具，状态栏的位置上各种图标都已显示正常，效果如下：<br><img src="/2020/02/24/vim-spacevim/img4.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用Vim写代码时经常会下载一些插件，让Vim的功能变得更丰富，用起来更加方便顺手，虽然总体比不上其他的IDE功能那么强大，但Vim的优势也是其他IDE无法比拟的。有很多人说如果下载很多插件把Vim整的像其他IDE功能那么多， 为何不直接用IDE去开发，这就仁者见仁，智者见智了。现在有大量的插件可以使用，但是下载一个插件，安装配置折腾半天，有时也整不顺手，使用效果不好，比较费时费力，弄的比较心累、崩溃…&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在这过程中发现了一个模块化的Vim IDE——SpaceVim，以下是它的官方介绍&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SpaceVim 是一个社区驱动的模块化的 Vim IDE，以模块的方式组织管理插件以及相关配置， 为不同的语言开发量身定制了相关的开发模块，该模块提供代码自动补全， 语法检查、格式化、调试、REPL 等特性。用户仅需载入相关语言的模块即可得到一个开箱即用的 Vim IDE。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;使用了一段时间发现还是非常方便的，省去了自己安装各种插件的时间，配置简单，可以对很多的编程语言进行单独的配置，并且不断有人在进行维护更新，相信以后功能支持会越来越强大。中文官网地址：&lt;a href=&quot;https://spacevim.org/cn/&quot; title=&quot;SpaceVim&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SpaceVim&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Vim" scheme="http://vwkai.com/categories/Vim/"/>
+    
+    
+      <category term="Vim" scheme="http://vwkai.com/tags/Vim/"/>
+    
+      <category term="编辑器" scheme="http://vwkai.com/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac软件推荐</title>
