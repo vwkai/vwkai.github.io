@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &amp;apos;test_readonly&amp;apos;@&amp;apos;localhost&amp;apos; identified by &amp;apos;1234&amp;apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权">
+<meta name="description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &apos;test_readonly&apos;@&apos;localhost&apos; identified by &apos;1234&apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权          document.querySelectorAll(&apos;.github-emoji&apos;)">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql设置数据库只读权限">
 <meta property="og:url" content="http://vwkai.com/2019/01/15/mysql-set-readonly/index.html">
 <meta property="og:site_name" content="Kai">
-<meta property="og:description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &amp;apos;test_readonly&amp;apos;@&amp;apos;localhost&amp;apos; identified by &amp;apos;1234&amp;apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权">
+<meta property="og:description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &apos;test_readonly&apos;@&apos;localhost&apos; identified by &apos;1234&apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权          document.querySelectorAll(&apos;.github-emoji&apos;)">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-10-25T13:31:58.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql设置数据库只读权限">
-<meta name="twitter:description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &amp;apos;test_readonly&amp;apos;@&amp;apos;localhost&amp;apos; identified by &amp;apos;1234&amp;apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权">
+<meta name="twitter:description" content="可以理解为开设一个账号，权限为只读 创建并授权用户 1GRANT select ON *.* to &apos;test_readonly&apos;@&apos;localhost&apos; identified by &apos;1234&apos;; 不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权          document.querySelectorAll(&apos;.github-emoji&apos;)">
 
 
 
@@ -352,9 +352,27 @@
       
         <p>可以理解为开设一个账号，权限为只读</p>
 <p>创建并授权用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT select ON *.* to &apos;test_readonly&apos;@&apos;localhost&apos; identified by &apos;1234&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT select ON *.* to 'test_readonly'@'localhost' identified by '1234';</span><br></pre></td></tr></tbody></table></figure>
 <p>不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -484,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -495,7 +513,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -506,7 +524,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

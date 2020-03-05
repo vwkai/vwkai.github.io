@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="table {width : 500px;}      table th:nth-of-type(1) {         width: 100px;     }     table th:nth-of-type(2) {         width: 400px;     }   一、事务的基本要素（ACID）1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部">
+<meta name="description" content="一、事务的基本要素（ACID）1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。2、一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏 。比如A向B转账，不可能A">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL事务">
 <meta property="og:url" content="http://vwkai.com/2019/09/06/mysql-transaction/index.html">
 <meta property="og:site_name" content="Kai">
-<meta property="og:description" content="table {width : 500px;}      table th:nth-of-type(1) {         width: 100px;     }     table th:nth-of-type(2) {         width: 400px;     }   一、事务的基本要素（ACID）1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部">
+<meta property="og:description" content="一、事务的基本要素（ACID）1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。2、一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏 。比如A向B转账，不可能A">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-10-25T13:31:58.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL事务">
-<meta name="twitter:description" content="table {width : 500px;}      table th:nth-of-type(1) {         width: 100px;     }     table th:nth-of-type(2) {         width: 400px;     }   一、事务的基本要素（ACID）1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部">
+<meta name="twitter:description" content="一、事务的基本要素（ACID）1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。2、一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏 。比如A向B转账，不可能A">
 
 
 
@@ -350,17 +350,7 @@
       
 
       
-        <style>
-    table {width : 500px;} 
-    table th:nth-of-type(1) {
-        width: 100px;
-    }
-    table th:nth-of-type(2) {
-        width: 400px;
-    }
-</style>
-
-<h4 id="一、事务的基本要素（ACID）"><a href="#一、事务的基本要素（ACID）" class="headerlink" title="一、事务的基本要素（ACID）"></a>一、事务的基本要素（ACID）</h4><p>1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。<br>2、一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏 。比如A向B转账，不可能A扣了钱，B却没收到。<br>3、隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A正在从一张银行卡中取钱，在A取钱的过程结束前，B不能向这张卡转账。<br>4、持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</p>
+        <h4 id="一、事务的基本要素（ACID）"><a href="#一、事务的基本要素（ACID）" class="headerlink" title="一、事务的基本要素（ACID）"></a>一、事务的基本要素（ACID）</h4><p>1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。<br>2、一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏 。比如A向B转账，不可能A扣了钱，B却没收到。<br>3、隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A正在从一张银行卡中取钱，在A取钱的过程结束前，B不能向这张卡转账。<br>4、持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</p>
 <a id="more"></a>
 <h4 id="二、事务的并发问题"><a href="#二、事务的并发问题" class="headerlink" title="二、事务的并发问题"></a>二、事务的并发问题</h4><p>1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据<br>2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。<br>3、幻读：</p>
 <ul>
@@ -396,7 +386,25 @@
 </tr>
 </tbody>
 </table>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -535,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -546,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -557,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

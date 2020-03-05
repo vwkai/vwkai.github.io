@@ -260,6 +260,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vwkai.com/2020/03/05/hexo-emoji/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/05/hexo-emoji/" itemprop="url">hexo文章中使用emoji表情</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-05T18:55:25+08:00">
+                2020-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Hexo 默认使用的是 <a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener">hexo-renderer-marked</a> 来渲染页面，这个渲染器不支持在文章中使用 emoji 表情。</p>
+<p>可以利用 <a href="https://github.com/crimx/hexo-filter-github-emojis" target="_blank" rel="noopener">hexo-filter-github-emojis</a> 插件实现在文章添加emoji表情的功能</p>
+<p>1、下载安装插件<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-github-emojis --save</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>2、修改主目录下的_config.yml文件，启用插件<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">githubEmojis:</span><br><span class="line">  enable: true</span><br><span class="line">  className: github-emoji</span><br><span class="line">  inject: true</span><br><span class="line">  styles:</span><br><span class="line">  customEmojis:</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>3、在<a href="https://www.einsition.com/tools/emoji-cheat-sheet" target="_blank" rel="noopener">emoji速查表</a>中找到想要添加的表情代码，添加到文章中即可，表情代码示例如下：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:blush:</span><br><span class="line">:thinking:</span><br></pre></td></tr></tbody></table></figure>
+<p><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8">😊</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f914.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png?v8">🤔</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f302.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f302.png?v8">🌂</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f989.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f989.png?v8">🦉</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f34e.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f34e.png?v8">🍎</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f605.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f605.png?v8">😅</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">😂</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f60d.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60d.png?v8">😍</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f916.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png?v8">🤖</span></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://vwkai.com/2020/02/24/vim-spacevim/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -516,7 +682,25 @@
 <li>EverNote（印象笔记）：记录日常或工作笔记 </li>
 <li>Sequel Pro：MySQL数据库管理工具</li>
 </ul>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
           
         
       
@@ -808,17 +992,7 @@
 
       
         
-          <style>
-    table {width : 500px;} 
-    table th:nth-of-type(1) {
-        width: 100px;
-    }
-    table th:nth-of-type(2) {
-        width: 400px;
-    }
-</style>
-
-<h4 id="一、事务的基本要素（ACID）"><a href="#一、事务的基本要素（ACID）" class="headerlink" title="一、事务的基本要素（ACID）"></a>一、事务的基本要素（ACID）</h4><p>1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。<br>2、一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏 。比如A向B转账，不可能A扣了钱，B却没收到。<br>3、隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A正在从一张银行卡中取钱，在A取钱的过程结束前，B不能向这张卡转账。<br>4、持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</p>
+          <h4 id="一、事务的基本要素（ACID）"><a href="#一、事务的基本要素（ACID）" class="headerlink" title="一、事务的基本要素（ACID）"></a>一、事务的基本要素（ACID）</h4><p>1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。<br>2、一致性（Consistency）：事务开始前和结束后，数据库的完整性约束没有被破坏 。比如A向B转账，不可能A扣了钱，B却没收到。<br>3、隔离性（Isolation）：同一时间，只允许一个事务请求同一数据，不同的事务之间彼此没有任何干扰。比如A正在从一张银行卡中取钱，在A取钱的过程结束前，B不能向这张卡转账。<br>4、持久性（Durability）：事务完成后，事务对数据库的所有更新将被保存到数据库，不能回滚。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/09/06/mysql-transaction/#more" rel="contents">
@@ -964,21 +1138,8 @@
 
       
         
-          <style>
-table {width : 100%;} 
-table th:nth-of-type(1) {
-    width: 20%;
-}
-  table th:nth-of-type(2) {
-    width: 40%;
-}
-table th:nth-of-type(3) {
-    width: 40%;
-}
-</style>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">##准备测试数据</span><br><span class="line">create table locktest(id int primary key,col1 int,index(col1));</span><br><span class="line">insert into locktest values(1,10);</span><br><span class="line">insert into locktest values(2,20);</span><br><span class="line">insert into locktest values(3,30);</span><br><span class="line">insert into locktest values(4,40);</span><br><span class="line">insert into locktest values(5,50);</span><br></pre></td></tr></table></figure>
-<h2 id="非唯一索引"><a href="#非唯一索引" class="headerlink" title="非唯一索引"></a>非唯一索引</h2><h3 id="范围查询，临键锁（一）"><a href="#范围查询，临键锁（一）" class="headerlink" title="范围查询，临键锁（一）"></a>范围查询，临键锁（一）</h3><h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#事务A</span><br><span class="line">mysql&gt; begin;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from locktest where col1 &gt; 30 and col1 &lt; 50 for update;</span><br><span class="line">+----+------+</span><br><span class="line">| id | col1 |</span><br><span class="line">+----+------+</span><br><span class="line">|  4 |   40 |</span><br><span class="line">+----+------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line">#事务B</span><br><span class="line">mysql&gt; begin;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from locktest;</span><br><span class="line">+----+------+</span><br><span class="line">| id | col1 |</span><br><span class="line">+----+------+</span><br><span class="line">|  1 |   10 |</span><br><span class="line">|  2 |   20 |</span><br><span class="line">|  4 |   40 |</span><br><span class="line">|  5 |   50 |</span><br><span class="line">+----+------+</span><br><span class="line">4 rows in set (0.01 sec)</span><br><span class="line"></span><br><span class="line">##col1为20时插入，发生阻塞，插入失败</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,20);</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为30时插入，发生阻塞，插入失败</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,30);</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为49时插入，发生阻塞，插入失败</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,49);</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为50时插入，没有发生阻塞，插入成功</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,50);</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">##col1为51时插入，没有发生阻塞，插入成功</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(18,51);</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">##col1为19时插入，没有发生阻塞，插入成功</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(17,19);</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">##col1为20时更新，没有发生阻塞，更新成功</span><br><span class="line">mysql&gt; update locktest set col1=20 where col1=20;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line">Rows matched: 1  Changed: 0  Warnings: 0</span><br><span class="line"></span><br><span class="line">##col1为40时更新，发生阻塞，更新失败</span><br><span class="line">mysql&gt; update locktest set col1=40 where col1=40;</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为50时更新，发生阻塞，更新失败</span><br><span class="line">mysql&gt; update locktest set col1=50 where col1=50;</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br></pre></td></tr></table></figure>
+          <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">##准备测试数据</span><br><span class="line">create table locktest(id int primary key,col1 int,index(col1));</span><br><span class="line">insert into locktest values(1,10);</span><br><span class="line">insert into locktest values(2,20);</span><br><span class="line">insert into locktest values(3,30);</span><br><span class="line">insert into locktest values(4,40);</span><br><span class="line">insert into locktest values(5,50);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="非唯一索引"><a href="#非唯一索引" class="headerlink" title="非唯一索引"></a>非唯一索引</h2><h3 id="范围查询，临键锁（一）"><a href="#范围查询，临键锁（一）" class="headerlink" title="范围查询，临键锁（一）"></a>范围查询，临键锁（一）</h3><h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#事务A</span><br><span class="line">mysql&gt; begin;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from locktest where col1 &gt; 30 and col1 &lt; 50 for update;</span><br><span class="line">+----+------+</span><br><span class="line">| id | col1 |</span><br><span class="line">+----+------+</span><br><span class="line">|  4 |   40 |</span><br><span class="line">+----+------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line">#事务B</span><br><span class="line">mysql&gt; begin;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from locktest;</span><br><span class="line">+----+------+</span><br><span class="line">| id | col1 |</span><br><span class="line">+----+------+</span><br><span class="line">|  1 |   10 |</span><br><span class="line">|  2 |   20 |</span><br><span class="line">|  4 |   40 |</span><br><span class="line">|  5 |   50 |</span><br><span class="line">+----+------+</span><br><span class="line">4 rows in set (0.01 sec)</span><br><span class="line"></span><br><span class="line">##col1为20时插入，发生阻塞，插入失败</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,20);</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为30时插入，发生阻塞，插入失败</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,30);</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为49时插入，发生阻塞，插入失败</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,49);</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为50时插入，没有发生阻塞，插入成功</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(16,50);</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">##col1为51时插入，没有发生阻塞，插入成功</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(18,51);</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">##col1为19时插入，没有发生阻塞，插入成功</span><br><span class="line">mysql&gt; insert into locktest(id,col1) values(17,19);</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">##col1为20时更新，没有发生阻塞，更新成功</span><br><span class="line">mysql&gt; update locktest set col1=20 where col1=20;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line">Rows matched: 1  Changed: 0  Warnings: 0</span><br><span class="line"></span><br><span class="line">##col1为40时更新，发生阻塞，更新失败</span><br><span class="line">mysql&gt; update locktest set col1=40 where col1=40;</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br><span class="line"></span><br><span class="line">##col1为50时更新，发生阻塞，更新失败</span><br><span class="line">mysql&gt; update locktest set col1=50 where col1=50;</span><br><span class="line">^C^C -- query aborted</span><br><span class="line">ERROR 1317 (70100): Query execution was interrupted</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><table>
 <thead>
 <tr>
@@ -1306,7 +1467,7 @@ table th:nth-of-type(3) {
         
           <p>Redis支持五种数据类型：字符串（String）、哈希（Hash）、列表（List）、集合（Set）、有序集合（sorted set）。</p>
 <p>每一种数据类型所对应的操作命令不同，当然也存在一些通用的，而且Redis的所有命令有很多，本文中记录的都是日常使用频率相对多一些的。</p>
-<p><strong>通用命令：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">keys：遍历所有key【O(n)】</span><br><span class="line">dbsize：计算key的总数【O(1)】</span><br><span class="line">exists：检查key是否存在;返回(integer) 1或(integer) 0【O(1)】</span><br><span class="line">del：删除指定的key-value【O(1)】</span><br><span class="line">expire：给key设置过期时间，在seconds秒后过期【O(1)】</span><br><span class="line">ttl：查看可以剩余的过期时间 ;返回(integer) -1：key存在但没有过期时间，(integer) -2 ：key不存在【O(1)】</span><br><span class="line">persist：去掉key的过期时间【O(1)】</span><br><span class="line">type：返回key的类型【O(1)】</span><br></pre></td></tr></table></figure></p>
+<p><strong>通用命令：</strong><br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">keys：遍历所有key【O(n)】</span><br><span class="line">dbsize：计算key的总数【O(1)】</span><br><span class="line">exists：检查key是否存在;返回(integer) 1或(integer) 0【O(1)】</span><br><span class="line">del：删除指定的key-value【O(1)】</span><br><span class="line">expire：给key设置过期时间，在seconds秒后过期【O(1)】</span><br><span class="line">ttl：查看可以剩余的过期时间 ;返回(integer) -1：key存在但没有过期时间，(integer) -2 ：key不存在【O(1)】</span><br><span class="line">persist：去掉key的过期时间【O(1)】</span><br><span class="line">type：返回key的类型【O(1)】</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p><strong>O(n)代表时间复杂度比较高，不建议在线上使用，O(1)代表时间复杂度较低，可以任意使用</strong><br></p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1458,10 +1619,28 @@ table th:nth-of-type(3) {
 <p><b>优点：省去了分配内存和管理内存地址的计算开销, 减少资源的占用</b></p>
 <p>COW是常用的优化手段，可以归类于：资源延迟分配。只有在真正需要使用资源时才占用资源， 写时复制通常能减少资源的占用。</p>
 <p>关于内存使用情况，可以使用php函数：memory_get_usage() 来进行查看</p>
-<p>例子：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a = range(<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="comment">//系统会给$a开辟一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$b = $a;</span><br><span class="line"><span class="comment">//此时$b也指向了$a的空间，两个变量共用一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$a = range(<span class="number">0</span>, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">//此时如果对$a或$b进行写操作时（不管值是否发生变化），会再拷贝一份新的空间出来 </span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行结果为：</span><br><span class="line">int(455664)</span><br><span class="line">int(455696)</span><br><span class="line">int(525384)</span><br></pre></td></tr></table></figure>
+<p>例子：<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a = range(<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="comment">//系统会给$a开辟一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$b = $a;</span><br><span class="line"><span class="comment">//此时$b也指向了$a的空间，两个变量共用一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$a = range(<span class="number">0</span>, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">//此时如果对$a或$b进行写操作时（不管值是否发生变化），会再拷贝一份新的空间出来 </span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行结果为：</span><br><span class="line">int(455664)</span><br><span class="line">int(455696)</span><br><span class="line">int(525384)</span><br></pre></td></tr></tbody></table></figure>
 <p>通过结果可以看出来，拷贝出新的内存空间后，内存占用量明显增加。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
           
         
       
@@ -1604,151 +1783,27 @@ table th:nth-of-type(3) {
           
             <p>可以理解为开设一个账号，权限为只读</p>
 <p>创建并授权用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT select ON *.* to &apos;test_readonly&apos;@&apos;localhost&apos; identified by &apos;1234&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT select ON *.* to 'test_readonly'@'localhost' identified by '1234';</span><br></pre></td></tr></tbody></table></figure>
 <p>不必先insert into user…以后再进行授权，以上语句是创建用户的同时并且已授权</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vwkai.com/2018/12/30/php-magic-constants/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kai">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/30/php-magic-constants/" itemprop="url">PHP魔术常量</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T14:10:34+08:00">
-                2018-12-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、<strong>__METHOD__</strong>:返回所在类的方法的名称。与__FUNCTION__不用的是，__METHOD__返回的是”class::function”的形式，而__FUNCTION__返回”function”的形式。<br>2、<strong>__FILE__</strong>: 返回当前文件的完整路径。<br>3、<strong>__FUNCTION__</strong>:返回所在函数的名字。<br>4、<strong>__LINE__</strong>:返回文件中当前的行号。<br>5、<strong>__CLASS__</strong>:返回所在类的名字。<br>6、<strong>__DIR__</strong>:返回文件所在目录，如果用在被包含文件中，则返回被包含的文件所在的目录<br>7、<strong>__NAMESPACE__</strong>:返回当前命名空间的名称（区分大小写）。此常量是在编译时定义的。<br>8、<strong>__TRAIT__</strong>:返回Trait被定义时的名字。Trait名包含其被声明的作用区域。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
           
         
       
@@ -1835,7 +1890,7 @@ table th:nth-of-type(3) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1846,7 +1901,7 @@ table th:nth-of-type(3) {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1857,7 +1912,7 @@ table th:nth-of-type(3) {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

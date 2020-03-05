@@ -354,10 +354,28 @@
 <p><b>优点：省去了分配内存和管理内存地址的计算开销, 减少资源的占用</b></p>
 <p>COW是常用的优化手段，可以归类于：资源延迟分配。只有在真正需要使用资源时才占用资源， 写时复制通常能减少资源的占用。</p>
 <p>关于内存使用情况，可以使用php函数：memory_get_usage() 来进行查看</p>
-<p>例子：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a = range(<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="comment">//系统会给$a开辟一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$b = $a;</span><br><span class="line"><span class="comment">//此时$b也指向了$a的空间，两个变量共用一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$a = range(<span class="number">0</span>, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">//此时如果对$a或$b进行写操作时（不管值是否发生变化），会再拷贝一份新的空间出来 </span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行结果为：</span><br><span class="line">int(455664)</span><br><span class="line">int(455696)</span><br><span class="line">int(525384)</span><br></pre></td></tr></table></figure>
+<p>例子：<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a = range(<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line"><span class="comment">//系统会给$a开辟一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$b = $a;</span><br><span class="line"><span class="comment">//此时$b也指向了$a的空间，两个变量共用一块内存空间</span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line">$a = range(<span class="number">0</span>, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">//此时如果对$a或$b进行写操作时（不管值是否发生变化），会再拷贝一份新的空间出来 </span></span><br><span class="line">var_dump(memory_get_usage());</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行结果为：</span><br><span class="line">int(455664)</span><br><span class="line">int(455696)</span><br><span class="line">int(525384)</span><br></pre></td></tr></tbody></table></figure>
 <p>通过结果可以看出来，拷贝出新的内存空间后，内存占用量明显增加。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -487,7 +505,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -498,7 +516,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -509,7 +527,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

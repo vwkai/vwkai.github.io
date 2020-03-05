@@ -342,7 +342,25 @@ vi authorized_keys  将A机器~/.ssh/id_rsa.pub文件中的内容复制过来
 <li>将打包的key发给想要进行互信的机器(web-1,web-2) </li>
 <li>互信的验证</li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -472,7 +490,7 @@ vi authorized_keys  将A机器~/.ssh/id_rsa.pub文件中的内容复制过来
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -483,7 +501,7 @@ vi authorized_keys  将A机器~/.ssh/id_rsa.pub文件中的内容复制过来
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -494,7 +512,7 @@ vi authorized_keys  将A机器~/.ssh/id_rsa.pub文件中的内容复制过来
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -329,7 +329,25 @@
       
         <p>工作的时间不算短了，但其实想想对于业务和技术并没有非常系统的整理，比较碎片化，平日里遇到的一些问题和解决方案没有完全落实到纸面上，有时觉得记忆力还可以…但是终归好记性不如烂笔头，还是决定通过blog方式进行梳理和归纳，将这几年积累的下来经验和技术做一个很好的沉淀，也以此督促自己，不断的扩充自己的知识点，建立良好的技术体系。在这里会记录一些技术知识、心得感想等等。</p>
 <p>嗯，就从这里开始。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -449,7 +467,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -460,7 +478,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -471,7 +489,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

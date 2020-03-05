@@ -77,17 +77,17 @@
 
 
 
-<meta name="description" content="一名IT圈从业人员，互联网爱好者，在北京。 喜欢看电影、听相声，喜欢旅行，偶尔健身 。 此博客主要是一些随笔记录，记录一些用到的，想到的，总结的，学习过的….等等一些七七八八的东西。 向往自由生活，“春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节”。">
+<meta name="description" content="一名IT圈从业人员，互联网爱好者，在北京。 喜欢看电影、听相声，喜欢旅行，偶尔健身 。 此博客主要是一些随笔记录，记录一些用到的，想到的，总结的，学习过的….等等一些七七八八的东西。 向往自由生活，“春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节”。          document.querySelectorAll(&apos;.github-emoji&apos;)           .for">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我">
 <meta property="og:url" content="http://vwkai.com/about/index.html">
 <meta property="og:site_name" content="Kai">
-<meta property="og:description" content="一名IT圈从业人员，互联网爱好者，在北京。 喜欢看电影、听相声，喜欢旅行，偶尔健身 。 此博客主要是一些随笔记录，记录一些用到的，想到的，总结的，学习过的….等等一些七七八八的东西。 向往自由生活，“春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节”。">
+<meta property="og:description" content="一名IT圈从业人员，互联网爱好者，在北京。 喜欢看电影、听相声，喜欢旅行，偶尔健身 。 此博客主要是一些随笔记录，记录一些用到的，想到的，总结的，学习过的….等等一些七七八八的东西。 向往自由生活，“春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节”。          document.querySelectorAll(&apos;.github-emoji&apos;)           .for">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-10-25T13:31:58.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="一名IT圈从业人员，互联网爱好者，在北京。 喜欢看电影、听相声，喜欢旅行，偶尔健身 。 此博客主要是一些随笔记录，记录一些用到的，想到的，总结的，学习过的….等等一些七七八八的东西。 向往自由生活，“春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节”。">
+<meta name="twitter:description" content="一名IT圈从业人员，互联网爱好者，在北京。 喜欢看电影、听相声，喜欢旅行，偶尔健身 。 此博客主要是一些随笔记录，记录一些用到的，想到的，总结的，学习过的….等等一些七七八八的东西。 向往自由生活，“春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节”。          document.querySelectorAll(&apos;.github-emoji&apos;)           .for">
 
 
 
@@ -269,7 +269,25 @@
 <p>喜欢看电影、听相声，喜欢旅行，偶尔健身 。</p>
 <p>此博客主要是一些随笔记录，记录一些用到的，想到的，总结的，学习过的….等等一些七七八八的东西。</p>
 <p>向往自由生活，“春有百花秋有月，夏有凉风冬有雪，若无闲事挂心头，便是人间好时节”。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         
       </div>
       
@@ -329,7 +347,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -340,7 +358,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -351,7 +369,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -351,7 +351,25 @@
 
       
         <p>1、<strong>__METHOD__</strong>:返回所在类的方法的名称。与__FUNCTION__不用的是，__METHOD__返回的是”class::function”的形式，而__FUNCTION__返回”function”的形式。<br>2、<strong>__FILE__</strong>: 返回当前文件的完整路径。<br>3、<strong>__FUNCTION__</strong>:返回所在函数的名字。<br>4、<strong>__LINE__</strong>:返回文件中当前的行号。<br>5、<strong>__CLASS__</strong>:返回所在类的名字。<br>6、<strong>__DIR__</strong>:返回文件所在目录，如果用在被包含文件中，则返回被包含的文件所在的目录<br>7、<strong>__NAMESPACE__</strong>:返回当前命名空间的名称（区分大小写）。此常量是在编译时定义的。<br>8、<strong>__TRAIT__</strong>:返回Trait被定义时的名字。Trait名包含其被声明的作用区域。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -481,7 +499,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -492,7 +510,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -503,7 +521,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
