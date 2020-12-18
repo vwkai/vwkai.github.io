@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="iTerm2,">
+  <meta name="keywords" content="hexo,">
 
 
 
@@ -77,21 +77,20 @@
 
 
 
-<meta name="description" content="将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。 一、安装及配置的步骤1. 安装lrzsz1brew install lrzsz 注意：有可能会一直卡在Updating Homebrew...上，这块有两种方式解决 （1）直接关闭brew每次执行命令时的自动更新（推荐） 123vim ~/.b">
-<meta name="keywords" content="iTerm2">
+<meta name="description" content="安装hexo的hexo-asset-image这个插件后，可以在使用hexo new 创建文章时，自动创建一个与文章名字相同的目录，文章中所有插入的图片都可以放到这个目录下进行引用，但是在用的过程中发现有个蛋疼的问题就是，如果文章中图片比较多，手动将图片放到这个目录下，在文章中手动去引用它，会非常的麻烦… 解决这个问题试过两种方式： 1、hexo的管理后台：通过后台去维护文章并支持一键发布，图片可">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac使用iTerm2实现服务器之间文件的上传&#x2F;下载">
-<meta property="og:url" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/index.html">
+<meta property="og:title" content="使用Typora写hexo文章">
+<meta property="og:url" content="http://vwkai.com/2020/12/18/Typora-hexo/index.html">
 <meta property="og:site_name" content="Kai">
-<meta property="og:description" content="将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。 一、安装及配置的步骤1. 安装lrzsz1brew install lrzsz 注意：有可能会一直卡在Updating Homebrew...上，这块有两种方式解决 （1）直接关闭brew每次执行命令时的自动更新（推荐） 123vim ~/.b">
+<meta property="og:description" content="安装hexo的hexo-asset-image这个插件后，可以在使用hexo new 创建文章时，自动创建一个与文章名字相同的目录，文章中所有插入的图片都可以放到这个目录下进行引用，但是在用的过程中发现有个蛋疼的问题就是，如果文章中图片比较多，手动将图片放到这个目录下，在文章中手动去引用它，会非常的麻烦… 解决这个问题试过两种方式： 1、hexo的管理后台：通过后台去维护文章并支持一键发布，图片可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/image-20201216220423674.png">
-<meta property="og:image" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/image-20201216220545592.png">
-<meta property="og:updated_time" content="2020-12-16T15:17:14.078Z">
+<meta property="og:image" content="http://vwkai.com/2020/12/18/Typora-hexo/image-20201218000648068.png">
+<meta property="og:updated_time" content="2020-12-18T07:44:23.508Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac使用iTerm2实现服务器之间文件的上传&#x2F;下载">
-<meta name="twitter:description" content="将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。 一、安装及配置的步骤1. 安装lrzsz1brew install lrzsz 注意：有可能会一直卡在Updating Homebrew...上，这块有两种方式解决 （1）直接关闭brew每次执行命令时的自动更新（推荐） 123vim ~/.b">
-<meta name="twitter:image" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/image-20201216220423674.png">
+<meta name="twitter:title" content="使用Typora写hexo文章">
+<meta name="twitter:description" content="安装hexo的hexo-asset-image这个插件后，可以在使用hexo new 创建文章时，自动创建一个与文章名字相同的目录，文章中所有插入的图片都可以放到这个目录下进行引用，但是在用的过程中发现有个蛋疼的问题就是，如果文章中图片比较多，手动将图片放到这个目录下，在文章中手动去引用它，会非常的麻烦… 解决这个问题试过两种方式： 1、hexo的管理后台：通过后台去维护文章并支持一键发布，图片可">
+<meta name="twitter:image" content="http://vwkai.com/2020/12/18/Typora-hexo/image-20201218000648068.png">
 
 
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/">
+  <link rel="canonical" href="http://vwkai.com/2020/12/18/Typora-hexo/">
 
 
 
 
 
-  <title>Mac使用iTerm2实现服务器之间文件的上传/下载 | Kai</title>
+  <title>使用Typora写hexo文章 | Kai</title>
   
 
 
@@ -264,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/">
+    <link itemprop="mainEntityOfPage" href="http://vwkai.com/2020/12/18/Typora-hexo/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kai">
@@ -281,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mac使用iTerm2实现服务器之间文件的上传/下载</h1>
+          <h1 class="post-title" itemprop="name headline">使用Typora写hexo文章</h1>
         
 
         <div class="post-meta">
@@ -293,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-16T21:59:42+08:00">
-                2020-12-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-18T00:04:02+08:00">
+                2020-12-18
               </time>
             
 
@@ -316,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/iTerm2/" itemprop="url" rel="index">
-                    <span itemprop="name">iTerm2</span>
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
                   </a>
                 </span>
 
@@ -353,29 +352,13 @@
       
 
       
-        <p>将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。</p>
-<h5 id="一、安装及配置的步骤"><a href="#一、安装及配置的步骤" class="headerlink" title="一、安装及配置的步骤"></a>一、安装及配置的步骤</h5><h6 id="1-安装lrzsz"><a href="#1-安装lrzsz" class="headerlink" title="1. 安装lrzsz"></a>1. 安装lrzsz</h6><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install lrzsz</span><br></pre></td></tr></tbody></table></figure>
-<p>注意：有可能会一直卡在<code>Updating Homebrew...</code>上，这块有两种方式解决</p>
-<p>（1）直接关闭brew每次执行命令时的自动更新（推荐）</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br><span class="line"># 新增一行</span><br><span class="line">export HOMEBREW_NO_AUTO_UPDATE=true</span><br></pre></td></tr></tbody></table></figure>
-<p>（2）替换brew源（方法自行百度）</p>
-<p>第二种替换源的方式操作了下，问题没解决，最后使用第一种方式简单粗暴的解决了。</p>
-<h6 id="2-下载iterm2-zmodem"><a href="#2-下载iterm2-zmodem" class="headerlink" title="2. 下载iterm2-zmodem"></a>2. 下载iterm2-zmodem</h6><p>访问github上的<a href="https://github.com/aikuyun/iterm2-zmodem" target="_blank" rel="noopener">iterm2-zmodem</a></p>
-<p>把<code>iterm2-send-zmodem.sh、iterm2-recv-zmodem.sh</code>下载下来，拷贝到<code>/usr/local/bin</code>文件夹中</p>
-<p>添加权限</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x iterm2-recv-zmodem.sh</span><br><span class="line">chmod +x iterm2-send-zmodem.sh</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<h6 id="3-Term2-配置添加rz-sz功能"><a href="#3-Term2-配置添加rz-sz功能" class="headerlink" title="3. Term2 配置添加rz sz功能"></a>3. Term2 配置添加rz sz功能</h6><p>点击 iTerm2 的 Perference -&gt; Profiles -&gt; Advanced -&gt; Triggers 的 Edit 按钮</p>
-<p><img src="/2020/12/16/mac-iterm2-lrzsz/image-20201216220423674.png" alt="image-20201216220423674"></p>
-<p><img src="/2020/12/16/mac-iterm2-lrzsz/image-20201216220545592.png" alt="image-20201216220545592"></p>
-<p>规则配置如下：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Regular expression: \*\*B0100</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/local/bin/iterm2-send-zmodem.sh</span><br><span class="line"></span><br><span class="line">Regular expression: \*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/local/bin/iterm2-recv-zmodem.sh</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>注意：红框内的复选框要勾上</strong></p>
-<h6 id="4-服务器安装lrzsz"><a href="#4-服务器安装lrzsz" class="headerlink" title="4. 服务器安装lrzsz"></a>4. 服务器安装lrzsz</h6><p>在远程服务器上安装lrzsz，CentOS:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install lrzsz</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>以上步骤执行完后，重启iTerm2</strong></p>
-<h5 id="二、使用rz和sz命令"><a href="#二、使用rz和sz命令" class="headerlink" title="二、使用rz和sz命令"></a>二、使用rz和sz命令</h5><h6 id="1-文件上传"><a href="#1-文件上传" class="headerlink" title="1. 文件上传"></a>1. 文件上传</h6>   <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在远程服务器上执行rz命令即可</span><br><span class="line">rz</span><br></pre></td></tr></tbody></table></figure>
-<h6 id="2-文件下载"><a href="#2-文件下载" class="headerlink" title="2. 文件下载"></a>2. 文件下载</h6>   <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在远程服务器上执行sz命令，后面跟上要下载的文件名称，可多个</span><br><span class="line">sz 文件1 文件2...</span><br></pre></td></tr></tbody></table></figure><script>
+        <p>安装hexo的hexo-asset-image这个插件后，可以在使用hexo new 创建文章时，自动创建一个与文章名字相同的目录，文章中所有插入的图片都可以放到这个目录下进行引用，但是在用的过程中发现有个蛋疼的问题就是，如果文章中图片比较多，手动将图片放到这个目录下，在文章中手动去引用它，会非常的麻烦…</p>
+<p>解决这个问题试过两种方式：</p>
+<p>1、<a href="/2020/12/16/hexo-admin/" title="hexo的管理后台">hexo的管理后台</a>：通过后台去维护文章并支持一键发布，图片可以在编辑文章时直接粘贴进去，图片会自动按照设定的路径存储。维护/发布文章方便，但是界面有点简陋..而且图片都上传到同一个目录下，并且直接把图片粘贴进文章中，有时图片并不显示，网上有些解决方案，但没仔细研究过。</p>
+<p>2、Typora</p>
+<p><img src="/2020/12/18/Typora-hexo/image-20201218000648068.png" alt="image-20201218000648068"></p>
+<p>在文章中插入图片，按以上配置可以为图片自动创建相应目录，与hexo推荐的资源文件夹的方式不谋而合了（post_asset_folder），而且Typora写markdown文章非常方便，这个用起来感觉比hexo-admin要自然很多，并且也比较方便。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -413,7 +396,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/" title="Mac使用iTerm2实现服务器之间文件的上传/下载">http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/</a>
+    <a href="http://vwkai.com/2020/12/18/Typora-hexo/" title="使用Typora写hexo文章">http://vwkai.com/2020/12/18/Typora-hexo/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -428,7 +411,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iTerm2/" rel="tag"># iTerm2</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -441,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/07/elk-filebeat-kafka/" rel="next" title="ELK+Filebeat+Kafka日志收集">
-                <i class="fa fa-chevron-left"></i> ELK+Filebeat+Kafka日志收集
+              <a href="/2020/12/16/hexo-admin/" rel="next" title="hexo添加hexo-admin组件">
+                <i class="fa fa-chevron-left"></i> hexo添加hexo-admin组件
               </a>
             
           </div>
@@ -450,10 +433,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/12/16/hexo-admin/" rel="prev" title="hexo添加hexo-admin组件">
-                hexo添加hexo-admin组件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -505,17 +484,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -577,22 +547,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、安装及配置的步骤"><span class="nav-number">1.</span> <span class="nav-text">一、安装及配置的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-安装lrzsz"><span class="nav-number">1.1.</span> <span class="nav-text">1. 安装lrzsz</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-下载iterm2-zmodem"><span class="nav-number">1.2.</span> <span class="nav-text">2. 下载iterm2-zmodem</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-Term2-配置添加rz-sz功能"><span class="nav-number">1.3.</span> <span class="nav-text">3. Term2 配置添加rz sz功能</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-服务器安装lrzsz"><span class="nav-number">1.4.</span> <span class="nav-text">4. 服务器安装lrzsz</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、使用rz和sz命令"><span class="nav-number">2.</span> <span class="nav-text">二、使用rz和sz命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-文件上传"><span class="nav-number">2.1.</span> <span class="nav-text">1. 文件上传</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-文件下载"><span class="nav-number">2.2.</span> <span class="nav-text">2. 文件下载</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
