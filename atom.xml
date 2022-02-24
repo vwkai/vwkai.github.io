@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://vwkai.com/"/>
-  <updated>2022-02-23T08:33:26.261Z</updated>
+  <updated>2022-02-24T06:33:44.524Z</updated>
   <id>http://vwkai.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://vwkai.com/2021/02/17/maxwell-kafka/"/>
     <id>http://vwkai.com/2021/02/17/maxwell-kafka/</id>
     <published>2021-02-17T14:25:24.000Z</published>
-    <updated>2022-02-23T08:33:26.261Z</updated>
+    <updated>2022-02-24T06:33:44.524Z</updated>
     
     <content type="html"><![CDATA[<h3 id="开启mysql的binlog功能"><a href="#开启mysql的binlog功能" class="headerlink" title="开启mysql的binlog功能"></a>开启mysql的binlog功能</h3><p>第一步：修改配置文件：</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/my.cnf</span><br></pre></td></tr></tbody></table></figure><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">log-bin= /var/lib/mysql/mysql-bin</span><br><span class="line"></span><br><span class="line">binlog-format=ROW</span><br><span class="line"></span><br><span class="line">server_id=1</span><br></pre></td></tr></tbody></table></figure> <a id="more"></a><p><img src="/2021/02/17/maxwell-kafka/wpsZSVr5F.jpg" alt="img"> </p><p>第二步：重启mysql</p><p><img src="/2021/02/17/maxwell-kafka/wpsDLGf0G.jpg" alt="img"> </p><p>第三步：验证mysql是否开启binlog</p><p><img src="/2021/02/17/maxwell-kafka/wpsR1rkbM.jpg" alt="img"> </p><p>log_bin参数为ON，证明已开启binlog</p><p> 第四步：进入/var/lib/mysql目录，查看binlog日志文件</p><p><img src="/2021/02/17/maxwell-kafka/wpsKfVbuf.jpg" alt="img"> </p><h3 id="创建kafka的topic"><a href="#创建kafka的topic" class="headerlink" title="创建kafka的topic"></a>创建kafka的topic</h3><p>topic名称为max_kafka_topic</p><p><img src="/2021/02/17/maxwell-kafka/wpsLL0E7x.jpg" alt="img"> </p> <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-topics.sh --create --partitions 3 --replication-factor 2 --topic max_kafka_topic --zookeeper node01:2181,node02:2181,node03:2181</span><br></pre></td></tr></tbody></table></figure><h3 id="安装、配置maxwell，实现实时解析mysql的binlog日志"><a href="#安装、配置maxwell，实现实时解析mysql的binlog日志" class="headerlink" title="安装、配置maxwell，实现实时解析mysql的binlog日志"></a>安装、配置maxwell，实现实时解析mysql的binlog日志</h3><p>第一步：添加mysql普通用户maxwell</p><p><img src="/2021/02/17/maxwell-kafka/wpszzeODm.jpg" alt="img"> </p><p>第二步：解压max-well安装包</p><p><img src="/2021/02/17/maxwell-kafka/wpshKsL3j.jpg" alt="img"> </p><p>第三步：修改maxwell配置文件</p><p><img src="/2021/02/17/maxwell-kafka/wpsJJONJf.jpg" alt="img"> </p><p><img src="/2021/02/17/maxwell-kafka/wpsByAHCY.jpg" alt="img"> </p><h3 id="启动maxwell并将采集的数据发送到kafka的topic中"><a href="#启动maxwell并将采集的数据发送到kafka的topic中" class="headerlink" title="启动maxwell并将采集的数据发送到kafka的topic中"></a>启动maxwell并将采集的数据发送到kafka的topic中</h3><p>第一步：启动maxwell</p><p><img src="/2021/02/17/maxwell-kafka/wps66jql5.jpg" alt="img"> </p><p><img src="/2021/02/17/maxwell-kafka/wpsNKdtXI.jpg" alt="img"> </p><p> 第二步：采集数据发送到kafka（向mysql中插入数据,maxwell会自动进行采集）</p><p><img src="/2021/02/17/maxwell-kafka/wps22iBdV.jpg" alt="img"> </p><h3 id="消费kafka数据，验证数据进入到kafka当中去了"><a href="#消费kafka数据，验证数据进入到kafka当中去了" class="headerlink" title="消费kafka数据，验证数据进入到kafka当中去了"></a>消费kafka数据，验证数据进入到kafka当中去了</h3><p><img src="/2021/02/17/maxwell-kafka/wps1yfF5N.jpg" alt="img"> </p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
@@ -33,6 +33,10 @@
     
     </summary>
     
+      <category term="MySQL" scheme="http://vwkai.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://vwkai.com/tags/MySQL/"/>
     
   </entry>
   
