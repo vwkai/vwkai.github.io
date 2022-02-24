@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32-32-a.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16-16-a.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="iTerm2,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。 一、安装及配置的步骤1. 安装lrzsz1brew install lrzsz 注意：有可能会一直卡在Updating Homebrew...上，这块有两种方式解决 （1）直接关闭brew每次执行命令时的自动更新（推荐） 123vim ~/.b">
+<meta name="keywords" content="iTerm2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac使用iTerm2实现服务器之间文件的上传&#x2F;下载">
+<meta property="og:url" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/index.html">
+<meta property="og:site_name" content="Kai">
+<meta property="og:description" content="将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。 一、安装及配置的步骤1. 安装lrzsz1brew install lrzsz 注意：有可能会一直卡在Updating Homebrew...上，这块有两种方式解决 （1）直接关闭brew每次执行命令时的自动更新（推荐） 123vim ~/.b">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/image-20201216220423674.png">
+<meta property="og:image" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/image-20201216220545592.png">
+<meta property="og:updated_time" content="2022-02-23T07:38:12.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac使用iTerm2实现服务器之间文件的上传&#x2F;下载">
+<meta name="twitter:description" content="将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。 一、安装及配置的步骤1. 安装lrzsz1brew install lrzsz 注意：有可能会一直卡在Updating Homebrew...上，这块有两种方式解决 （1）直接关闭brew每次执行命令时的自动更新（推荐） 123vim ~/.b">
+<meta name="twitter:image" content="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/image-20201216220423674.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/">
+
+
+
+
+
+  <title>Mac使用iTerm2实现服务器之间文件的上传/下载 | Kai</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b15d92d1913549083a73783c529c1d37";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kai</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mac使用iTerm2实现服务器之间文件的上传/下载</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-16T21:59:42+08:00">
+                2020-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/iTerm2/" itemprop="url" rel="index">
+                    <span itemprop="name">iTerm2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>将本地文件上传到服务器或者从服务器将文件下载到本地，通常有两种方式：一种是使用scp命令，另一种是通过客户端工具传输，在Mac下常用的工具是iTerm2。</p>
+<h5 id="一、安装及配置的步骤"><a href="#一、安装及配置的步骤" class="headerlink" title="一、安装及配置的步骤"></a>一、安装及配置的步骤</h5><h6 id="1-安装lrzsz"><a href="#1-安装lrzsz" class="headerlink" title="1. 安装lrzsz"></a>1. 安装lrzsz</h6><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install lrzsz</span><br></pre></td></tr></tbody></table></figure>
+<p>注意：有可能会一直卡在<code>Updating Homebrew...</code>上，这块有两种方式解决</p>
+<p>（1）直接关闭brew每次执行命令时的自动更新（推荐）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br><span class="line"># 新增一行</span><br><span class="line">export HOMEBREW_NO_AUTO_UPDATE=true</span><br></pre></td></tr></tbody></table></figure>
+<p>（2）替换brew源（方法自行百度）</p>
+<p>第二种替换源的方式操作了下，问题没解决，最后使用第一种方式简单粗暴的解决了。</p>
+<h6 id="2-下载iterm2-zmodem"><a href="#2-下载iterm2-zmodem" class="headerlink" title="2. 下载iterm2-zmodem"></a>2. 下载iterm2-zmodem</h6><p>访问github上的<a href="https://github.com/aikuyun/iterm2-zmodem" target="_blank" rel="noopener">iterm2-zmodem</a></p>
+<p>把<code>iterm2-send-zmodem.sh、iterm2-recv-zmodem.sh</code>下载下来，拷贝到<code>/usr/local/bin</code>文件夹中</p>
+<p>添加权限</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x iterm2-recv-zmodem.sh</span><br><span class="line">chmod +x iterm2-send-zmodem.sh</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h6 id="3-Term2-配置添加rz-sz功能"><a href="#3-Term2-配置添加rz-sz功能" class="headerlink" title="3. Term2 配置添加rz sz功能"></a>3. Term2 配置添加rz sz功能</h6><p>点击 iTerm2 的 Perference -&gt; Profiles -&gt; Advanced -&gt; Triggers 的 Edit 按钮</p>
+<p><img src="/2020/12/16/mac-iterm2-lrzsz/image-20201216220423674.png" alt="image-20201216220423674"></p>
+<p><img src="/2020/12/16/mac-iterm2-lrzsz/image-20201216220545592.png" alt="image-20201216220545592"></p>
+<p>规则配置如下：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Regular expression: \*\*B0100</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/local/bin/iterm2-send-zmodem.sh</span><br><span class="line"></span><br><span class="line">Regular expression: \*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/local/bin/iterm2-recv-zmodem.sh</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>注意：红框内的复选框要勾上</strong></p>
+<h6 id="4-服务器安装lrzsz"><a href="#4-服务器安装lrzsz" class="headerlink" title="4. 服务器安装lrzsz"></a>4. 服务器安装lrzsz</h6><p>在远程服务器上安装lrzsz，CentOS:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install lrzsz</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>以上步骤执行完后，重启iTerm2</strong></p>
+<h5 id="二、使用rz和sz命令"><a href="#二、使用rz和sz命令" class="headerlink" title="二、使用rz和sz命令"></a>二、使用rz和sz命令</h5><h6 id="1-文件上传"><a href="#1-文件上传" class="headerlink" title="1. 文件上传"></a>1. 文件上传</h6>   <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在远程服务器上执行rz命令即可</span><br><span class="line">rz</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="2-文件下载"><a href="#2-文件下载" class="headerlink" title="2. 文件下载"></a>2. 文件下载</h6>   <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在远程服务器上执行sz命令，后面跟上要下载的文件名称，可多个</span><br><span class="line">sz 文件1 文件2...</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Kai
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/" title="Mac使用iTerm2实现服务器之间文件的上传/下载">http://vwkai.com/2020/12/16/mac-iterm2-lrzsz/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iTerm2/" rel="tag"># iTerm2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/07/elk-filebeat-kafka/" rel="next" title="ELK+Filebeat+Kafka日志收集">
+                <i class="fa fa-chevron-left"></i> ELK+Filebeat+Kafka日志收集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/12/16/hexo-admin/" rel="prev" title="hexo添加hexo-admin组件">
+                hexo添加hexo-admin组件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Kai">
+            
+              <p class="site-author-name" itemprop="name">Kai</p>
+              <p class="site-description motion-element" itemprop="description">随笔记录</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、安装及配置的步骤"><span class="nav-number">1.</span> <span class="nav-text">一、安装及配置的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-安装lrzsz"><span class="nav-number">1.1.</span> <span class="nav-text">1. 安装lrzsz</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-下载iterm2-zmodem"><span class="nav-number">1.2.</span> <span class="nav-text">2. 下载iterm2-zmodem</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-Term2-配置添加rz-sz功能"><span class="nav-number">1.3.</span> <span class="nav-text">3. Term2 配置添加rz sz功能</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-服务器安装lrzsz"><span class="nav-number">1.4.</span> <span class="nav-text">4. 服务器安装lrzsz</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、使用rz和sz命令"><span class="nav-number">2.</span> <span class="nav-text">二、使用rz和sz命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-文件上传"><span class="nav-number">2.1.</span> <span class="nav-text">1. 文件上传</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-文件下载"><span class="nav-number">2.2.</span> <span class="nav-text">2. 文件下载</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
